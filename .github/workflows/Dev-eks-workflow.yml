@@ -6,7 +6,7 @@ on:
       environment:
       description: Deploy to Dev
       required: true
-      default:Dev
+      default: Dev
 
 
 jobs:
