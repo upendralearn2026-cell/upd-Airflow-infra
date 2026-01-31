@@ -4,18 +4,18 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-      description:Deploy to Dev
+      description: Deploy to Dev
       required: true
-      defalt:Dev
+      default:Dev
 
 
 jobs:
   deploy-dev:
-    name: Deploy t Dev 
+    name: Deploy to Dev 
     permissions: 
-      package:write
-      contents:read
-      id-token:write
+      package : write
+      contents : read
+      id-token: write
 
   runs-on: ubuntu-latest
   defaults:
@@ -23,7 +23,7 @@ jobs:
       working-directory: ./Airflow-infra-terraform         
 
   steps:
-    - name: chekout repository
+    - name: checkout repository
       uses: action/chekout@v2
 
     - name: Configure aws credentials
@@ -33,7 +33,7 @@ jobs:
         role-session-name: defalt
         aws-region: us-east-1
 
-    - name : Install Terrafrom
+    - name : Install Terraform
       uses: harshicorp/terraform@v2
       with: 
         terraform_version: 1.5.6
