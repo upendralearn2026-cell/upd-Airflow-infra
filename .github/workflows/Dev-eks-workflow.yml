@@ -1,4 +1,4 @@
-name : Terrafrom Infra Deployment in Dev AWS account
+name: Terrafrom Infra Deployment in Dev AWS account
 
 on: 
   workflow_dispatch:
