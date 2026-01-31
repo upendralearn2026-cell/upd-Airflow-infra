@@ -13,39 +13,39 @@ jobs:
   deploy-dev:
     name: Deploy to Dev 
     permissions: 
-      package : write
-      contents : read
-      id-token: write
+       package: write
+       contents: read
+       id-token: write
 
-  runs-on: ubuntu-latest
-  defaults:
-    run:
-      working-directory: ./Airflow-infra-terraform         
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Airflow-infra-terraform         
 
-  steps:
-    - name: checkout repository
-      uses: action/chekout@v2
+    steps:
+     - name: checkout repository
+       uses: action/chekout@v2
 
-    - name: Configure aws credentials
-      uses: aws-actions/Configure-aws-credentials@v3
-      with: 
-        role-to-assume: arn:aws:iam::111710313191:role/upd-repo-oidc
-        role-session-name: defalt
-        aws-region: us-east-1
+     - name: Configure aws credentials
+       uses: aws-actions/Configure-aws-credentials@v3
+       with: 
+         role-to-assume: arn:aws:iam::111710313191:role/upd-repo-oidc
+         role-session-name: defalt
+         aws-region: us-east-1
 
-    - name : Install Terraform
-      uses: harshicorp/terraform@v2
-      with: 
-        terraform_version: 1.5.6
+     - name: Install Terraform
+       uses: harshicorp/terraform@v2
+       with: 
+         terraform_version: 1.5.6
 
-    - name: Terrafrom init
-      run: |
-        terraform init   
+     - name: Terrafrom init
+       run: |
+         terraform init   
 
-    - name: Terrafrom plan
-      run: |
-        terraform plan 
+     - name: Terrafrom plan
+       run: |
+         terraform plan 
 
-    - name: Terrafrom apply
-      run: |
-        terraform apply --auto-approve     
+     - name: Terrafrom apply
+       run: |
+         terraform apply --auto-approve     
