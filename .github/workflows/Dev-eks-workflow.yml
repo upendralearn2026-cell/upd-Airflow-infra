@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-      description: Deploy to Dev
+      description: "Deploy to Dev"
       required: true
       default: Dev
 
@@ -13,7 +13,7 @@ jobs:
   deploy-dev:
     name: Deploy to Dev 
     permissions: 
-       package: write
+       packages: write
        contents: read
        id-token: write
 
