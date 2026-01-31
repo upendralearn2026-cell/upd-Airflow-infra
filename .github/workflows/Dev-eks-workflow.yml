@@ -30,7 +30,7 @@ jobs:
        uses: aws-actions/Configure-aws-credentials@v3
        with: 
          role-to-assume: arn:aws:iam::111710313191:role/upd-repo-oidc
-         role-session-name: defalt
+         role-session-name: default
          aws-region: us-east-1
 
      - name: Install Terraform
