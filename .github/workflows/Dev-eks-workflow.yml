@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-      description: "Deploy to Dev"
-      required: true
-      default: Dev
+        description: "Deploy to Dev"
+        required: true
+        default: Dev
 
 
 jobs:
