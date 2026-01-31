@@ -24,7 +24,7 @@ jobs:
 
     steps:
      - name: checkout repository
-       uses: action/chekout@v2
+       uses: actions/checkout@v2
 
      - name: Configure aws credentials
        uses: aws-actions/Configure-aws-credentials@v3
@@ -34,7 +34,7 @@ jobs:
          aws-region: us-east-1
 
      - name: Install Terraform
-       uses: harshicorp/terraform@v2
+       uses: hashicorp/setup-terraform@v2
        with: 
          terraform_version: 1.5.6
 
